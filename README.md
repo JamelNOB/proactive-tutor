@@ -37,6 +37,35 @@ proactive-tutor/
 
 ---
 
+## ⚡ 一键安装 (One-Click Installation for Antigravity & MCP)
+
+任何人只要克隆本项目，运行 1 条命令，即可自动完成 **Antigravity Skill 注册 + MCP 服务端挂载 + 自检**：
+
+```powershell
+git clone https://github.com/JamelNOB/proactive-tutor.git
+cd proactive-tutor
+python install.py
+```
+
+> 💡 **在 Antigravity 中更省心**：直接在 Antigravity 聊天框发一句：  
+> `“帮我安装这个技能：https://github.com/JamelNOB/proactive-tutor”`  
+> AI 就会自动下载并运行 `install.py`，三秒完成配置！
+
+### 支持其他 MCP 客户端（如 Claude Desktop / Cursor）
+在你的 `claude_desktop_config.json` 或对应 MCP 配置文件中加入：
+```json
+{
+  "mcpServers": {
+    "proactive-tutor": {
+      "command": "python",
+      "args": ["<克隆路径>/proactive-tutor/mcp_server.py"]
+    }
+  }
+}
+```
+
+---
+
 ## 🚀 快速上手 (Quick Start)
 
 ### 1. 运行自动化对抗单测

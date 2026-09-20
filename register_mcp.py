@@ -42,7 +42,8 @@ def get_default_paths():
     user_home = Path.home()
     mcp_config_path = user_home / ".gemini" / "config" / "mcp_config.json"
     
-    server_script = user_home / ".gemini" / "antigravity" / "scratch" / "proactive-tutor" / "mcp_server.py"
+    # 动态自适应：无论用户克隆到哪个目录，自动定位当前目录下的 mcp_server.py
+    server_script = (Path(__file__).resolve().parent / "mcp_server.py").resolve()
     python_exe = Path(sys.executable).resolve()
     
     return mcp_config_path, server_script, python_exe
